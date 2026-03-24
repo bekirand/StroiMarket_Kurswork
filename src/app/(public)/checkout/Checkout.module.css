@@ -1,0 +1,257 @@
+.page {
+    padding: 40px 0 80px;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-gray-900);
+    margin-bottom: 32px;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 32px;
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Форма --- */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.card {
+    background: white;
+    border: 1.5px solid var(--color-border);
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.cardTitle {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-gray-900);
+    margin-bottom: 16px;
+}
+
+.fields {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+@media (max-width: 560px) {
+    .row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-gray-600);
+    letter-spacing: 0.03em;
+}
+
+.input,
+.textarea {
+    padding: 10px 14px;
+    border: 1.5px solid var(--color-border);
+    border-radius: 10px;
+    font-family: var(--font-family);
+    font-size: 0.9rem;
+    color: var(--color-gray-900);
+    outline: none;
+    transition: border-color 0.15s;
+    background: white;
+}
+
+.input:focus,
+.textarea:focus {
+    border-color: var(--color-primary-400);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+    color: var(--color-gray-300);
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* --- Доставка --- */
+.deliveryOptions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+@media (max-width: 480px) {
+    .deliveryOptions {
+        grid-template-columns: 1fr;
+    }
+}
+
+.deliveryOption {
+    position: relative;
+    border: 2px solid var(--color-border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.deliveryOption input[type="radio"] {
+    margin-top: 2px;
+    accent-color: var(--color-primary-600);
+    flex-shrink: 0;
+}
+
+.deliveryOption:has(input:checked) {
+    border-color: var(--color-primary-500);
+    background: var(--color-primary-50);
+}
+
+.deliveryLabel {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.deliveryName {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-gray-900);
+}
+
+.deliveryNote {
+    font-size: 0.75rem;
+    color: var(--color-gray-400);
+}
+
+/* --- Сводка --- */
+.summary {
+    position: sticky;
+    top: 100px;
+    background: white;
+    border: 1.5px solid var(--color-border);
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.summaryTitle {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--color-gray-900);
+    margin-bottom: 16px;
+}
+
+.summaryItems {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.summaryItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--color-gray-700);
+}
+
+.summaryItemName {
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.summaryItemQty {
+    color: var(--color-gray-400);
+    white-space: nowrap;
+}
+
+.summaryItemPrice {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.summaryDivider {
+    border: none;
+    border-top: 1.5px solid var(--color-border);
+    margin: 12px 0;
+}
+
+.summaryTotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--color-gray-900);
+    margin-bottom: 20px;
+}
+
+.submitBtn {
+    width: 100%;
+    padding: 14px;
+    background: var(--color-primary-600);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: var(--font-family);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.submitBtn:hover:not(:disabled) {
+    background: var(--color-primary-700);
+    transform: translateY(-1px);
+}
+
+.submitBtn:disabled {
+    background: var(--color-gray-300);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.error {
+    background: #fef2f2;
+    border: 1.5px solid #fecaca;
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: #dc2626;
+    font-size: 0.875rem;
+}

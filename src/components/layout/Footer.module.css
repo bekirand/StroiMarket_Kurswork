@@ -1,0 +1,160 @@
+/* ===== FOOTER — Footer.module.css ===== */
+
+.footer {
+    background: var(--color-gray-900);
+    color: var(--color-gray-400);
+    margin-top: auto;
+}
+
+.top {
+    padding: var(--spacing-16) 0 var(--spacing-12);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: var(--spacing-8);
+}
+
+/* ===== КОЛОНКА С ЛОГОТИПОМ ===== */
+.brand {
+    display: block;
+}
+
+.footerLogo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    text-decoration: none;
+    margin-bottom: var(--spacing-4);
+}
+
+.footerLogoIcon {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--color-primary-500), var(--color-primary-700));
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerLogoText {
+    font-size: var(--font-size-lg);
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.025em;
+}
+
+.description {
+    font-size: var(--font-size-sm);
+    line-height: 1.7;
+    color: var(--color-gray-400);
+    max-width: 280px;
+    margin-bottom: var(--spacing-5);
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+}
+
+.contactItem {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-300);
+}
+
+.contactItem a {
+    color: var(--color-gray-300);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.contactItem a:hover {
+    color: white;
+}
+
+/* ===== КОЛОНКИ НАВИГАЦИИ ===== */
+.column {
+    display: block;
+}
+
+.columnTitle {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--spacing-4);
+}
+
+.columnLinks {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+}
+
+.footerLink {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-400);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.footerLink:hover {
+    color: white;
+}
+
+/* ===== НИЖНЯЯ ЧАСТЬ (копирайт) ===== */
+.bottom {
+    padding: var(--spacing-6) 0;
+    border-top: 1px solid var(--color-gray-700);
+}
+
+.bottomInner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-4);
+}
+
+.copyright {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
+}
+
+.bottomLinks {
+    display: flex;
+    gap: var(--spacing-6);
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: 1.2fr 1fr 1fr;
+    }
+
+    .brand {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 640px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-6);
+    }
+
+    .brand {
+        grid-column: 1 / -1;
+    }
+
+    .bottomInner {
+        flex-direction: column;
+        text-align: center;
+    }
+}

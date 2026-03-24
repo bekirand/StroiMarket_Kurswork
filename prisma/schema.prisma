@@ -1,0 +1,334 @@
+// ============================================================
+// СХЕМА БАЗЫ ДАННЫХ — СтройМаркет
+// Описание всех таблиц, связей и перечислений (enum)
+// ============================================================
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider  = "postgresql"
+}
+
+// ===== ПЕРЕЧИСЛЕНИЯ (ENUM) =====
+
+// Роли пользователей системы
+enum UserRole {
+  CUSTOMER     // Покупатель
+  MANAGER      // Менеджер
+  STOREKEEPER  // Складвщик
+  ADMIN        // Администратор
+}
+
+// Статусы заказа (жизненный цикл)
+enum OrderStatus {
+  NOVIY        // Создан покупателем
+  PODTVERZHDEN // Подтверждён менеджером
+  V_OBRABOTKE  // Готовится на складе
+  OTPRAVLEN    // Отправлен (остаток товара уменьшен)
+  DOSTAVLEN    // Успешно доставлен
+  OTMENEN      // Отменён (остаток возвращён)
+}
+
+// Тип доставки
+enum DeliveryType {
+  ADDRESS  // Доставка по адресу
+  PICKUP   // Самовывоз
+}
+
+// Статус заявления от менеджера
+enum RequestStatus {
+  NOVAYA      // Новое, ещё не рассмотренное заявление
+  RASSMOTRENA // Администратор ответил
+}
+
+// Тип действия с отзывом
+enum ReviewAction {
+  DELETE
+  RESTORE
+}
+
+// ===== МОДЕЛИ =====
+
+// Пользователь системы (покупатель / менеджер / администратор)
+model User {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  phone        String?  // Телефон пользователя
+  image        String?  // Аватар (ImageKit url)
+  passwordHash String   // Хэш пароля (bcrypt), никогда не хранить пароль открыто
+  role                 UserRole @default(CUSTOMER)
+  canChangeOrderStatus Boolean  @default(true) // Разрешено ли менять статусы (для менеджеров и складвщиков)
+  canDeleteReviews     Boolean  @default(false) // Разрешено ли удалять отзывы (для менеджеров)
+  canDeleteMessages    Boolean  @default(false) // Разрешено ли удалять сообщения Контактов (для менеджеров)
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  // Связи
+  orders         Order[]              // Заказы пользователя
+  cart           CartItem[]           // Позиции в корзине
+  addresses      Address[]            // Сохраненные адреса доставки
+  sentRequests   ManagerRequest[]     @relation("SentRequests")     // Отправленные заявления
+  receivedRequests ManagerRequest[]   @relation("ReceivedRequests") // Полученные заявления
+  statusChanges  OrderStatusHistory[] // Логи изменения статусов заказов
+  favorites      Favorite[]           // Избранные товары
+  reviews        Review[]             // Оставленные отзывы
+  reviewActions  ReviewActionLog[]     // Логи действий над отзывами (для модераторов)
+
+  @@map("users") // Имя таблицы в БД
+}
+
+// Сохраненные адреса пользователей (для оформления заказов)
+model Address {
+  id          String   @id @default(cuid())
+  title       String   // Название адреса (напр. "Дом", "Офис")
+  addressLine String   // Полный адрес (улица, дом, квартира)
+  isDefault   Boolean  @default(false) // Использовать по умолчанию
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("addresses")
+}
+
+// Модель для хранения информации о сбросах статистики
+model AnalyticsReset {
+  id        String   @id @default(cuid())
+  year      Int
+  month     Int?     // Если null, значит сброс за весь год (опционально)
+  resetAt   DateTime @default(now())
+
+  @@unique([year, month])
+  @@map("analytics_resets")
+}
+
+
+// Категория товаров
+model Category {
+  id       String    @id @default(cuid())
+  name     String    // Название категории (например: "Лакокрасочные материалы")
+  slug     String    @unique // URL-friendly название (например: "lakokrasochnye")
+  image    String?   // Ссылка на изображение категории (ImageKit)
+
+  // Связи
+  products Product[] // Товары в этой категории
+
+  @@map("categories")
+}
+
+// Товар в каталоге
+model Product {
+  id            String   @id @default(cuid())
+  sku           String   @unique // Артикул товара (например: "SM-001")
+  name          String   // Название товара
+  brand         String?  // Бренд товара
+  description   String   @db.Text // Подробное описание
+  price         Float    // Цена в рублях
+  images        String[] // Массив ссылок на фото (ImageKit URLs)
+  unit          String   // Единица измерения (шт, кг, м, м², л)
+  purchaseUnit  String   // Единица закупки (паллет, упаковка, рулон)
+  stockQuantity Int      @default(0) // Остаток на складе
+  discount      Int      @default(0) // Скидка в процентах (0 = нет скидки)
+  isActive      Boolean  @default(true) // Видимость товара на сайте
+  rating        Float    @default(0) // Средний рейтинг товара
+  reviewsCount  Int      @default(0) // Количество отзывов
+  reviewCriteria Json?     // Настраиваемые критерии оценки с вариантами ответов (например: [{"name": "Качество", "options": ["Отличное", "Хорошее", "Плохое"]}])
+  features      Json?      // Динамические характеристики товара: [{"name": "Вес", "value": "25 кг"}, ...]
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Связь с категорией
+  categoryId String
+  category   Category @relation(fields: [categoryId], references: [id])
+
+  // Связи
+  orderItems OrderItem[] // Позиции в заказах
+  cartItems  CartItem[]  // Позиции в корзинах
+  favorites  Favorite[]  // В чьем избранном находится
+  reviews    Review[]    // Отзывы к товару
+
+  @@map("products")
+}
+
+// Заказ покупателя
+model Order {
+  id              String       @id @default(cuid())
+  status          OrderStatus  @default(NOVIY)
+  deliveryType    DeliveryType
+  deliveryAddress String?      // Заполняется только при deliveryType = ADDRESS
+  totalPrice      Float        // Итоговая сумма заказа
+  // Данные покупателя (заполняются при оформлении)
+  customerName    String       // Имя
+  customerPhone   String       // Телефон
+  customerEmail   String?      // Email для связи
+  comment         String?      // Комментарий к заказу (доставка, подъезд и т.д.)
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+
+  // Связь с покупателем (null для гостей)
+  userId String?
+  user   User?   @relation(fields: [userId], references: [id])
+
+  // Позиции заказа
+  items OrderItem[]
+
+  // История изменений статуса
+  statusHistory OrderStatusHistory[]
+
+  @@map("orders")
+}
+
+
+// Позиция в заказе (конкретный товар в конкретном количестве)
+model OrderItem {
+  id       String @id @default(cuid())
+  quantity Int    // Количество единиц
+  price    Float  // Цена ТОВАРА НА МОМЕНТ ЗАКАЗА (фиксируется!)
+
+  // Связь с заказом
+  orderId String
+  order   Order  @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  // Связь с товаром
+  productId String
+  product   Product @relation(fields: [productId], references: [id])
+
+  @@map("order_items")
+}
+
+// Позиция в корзине (для авторизованных — userId, для гостей — sessionId)
+model CartItem {
+  id        String @id @default(cuid())
+  quantity  Int    @default(1)
+  sessionId String? // Идентификатор сессии гостя
+
+  // Связь с пользователем (необязательно — для гостей null)
+  userId String?
+  user   User?   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Связь с товаром
+  productId String
+  product   Product @relation(fields: [productId], references: [id])
+
+  @@unique([userId, productId])
+  @@unique([sessionId, productId])
+  @@map("cart_items")
+}
+
+// Заявление менеджера администратору
+model ManagerRequest {
+  id          String        @id @default(cuid())
+  subject     String        // Тема заявления
+  message     String        @db.Text // Текст заявления
+  attachments String[]      // Ссылки на прикреплённые файлы
+  reply       String?       @db.Text // Ответ администратора
+  status      RequestStatus @default(NOVAYA)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  // Кто отправил
+  fromUserId String
+  fromUser   User   @relation("SentRequests", fields: [fromUserId], references: [id])
+
+  // Кому отправлено
+  toUserId   String?
+  toUser     User?  @relation("ReceivedRequests", fields: [toUserId], references: [id])
+
+  @@map("manager_requests")
+}
+
+// Логирование изменений статусов заказа
+model OrderStatusHistory {
+  id          String      @id @default(cuid())
+  oldStatus   OrderStatus // Предыдущий статус
+  newStatus   OrderStatus // Новый статус
+  createdAt   DateTime    @default(now()) // Время изменения
+
+  // Связь с заказом
+  orderId     String
+  order       Order       @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  // Связь с сотрудником (кто изменил статус)
+  userId      String
+  user        User        @relation(fields: [userId], references: [id])
+
+  @@map("order_status_history")
+}
+
+// Избранные товары (Wishlist)
+model Favorite {
+  id        String   @id @default(cuid())
+  sessionId String?  // Для неавторизованных (гостей)
+  userId    String?  // Для авторизованных покупателей
+  productId String
+  createdAt DateTime @default(now())
+
+  user      User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, productId])
+  @@unique([sessionId, productId])
+  @@map("favorites")
+}
+
+// Отзыв к товару
+model Review {
+  id        String   @id @default(cuid())
+  rating    Int      // Оценка от 1 до 5
+  text      String   @db.Text
+  images    String[] // Ссылки на фото (ImageKit)
+  videos    String[] // Ссылки на видео
+  criteriaRatings Json?  // Дополнительные оценки (например: {"Качество": 5, "Доставка": 4})
+  createdAt DateTime @default(now())
+
+  // Поля для мягкого удаления
+  isDeleted       Boolean   @default(false)
+  deletedAt       DateTime?
+  deletedByUserId String?
+
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  actionLogs ReviewActionLog[]
+
+  @@map("reviews")
+}
+
+// Логирование действий администраторов и менеджеров над отзывами
+model ReviewActionLog {
+  id        String       @id @default(cuid())
+  action    ReviewAction
+  details   String?      @db.Text // Например, текст отзыва на момент удаления
+  createdAt DateTime     @default(now())
+
+  // Связь с отзывом
+  reviewId  String
+  review    Review       @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+
+  // Кто совершил действие
+  userId    String
+  user      User         @relation(fields: [userId], references: [id])
+
+  @@map("review_action_logs")
+}
+
+// Сообщения со страницы контактов
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  phone     String
+  email     String?
+  body      String   @db.Text
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@map("contact_messages")
+}

@@ -1,0 +1,353 @@
+{
+  "graphNodePositions": {
+    "arch:entry": {
+      "x": -6175.469840318425,
+      "y": -2027.949422954392
+    },
+    "arch:arch_layer:api:sm001": {
+      "x": -5976.67043776042,
+      "y": -2422.9397103148467
+    },
+    "arch:arch_layer:presentation:sm001": {
+      "x": -5952.322383084863,
+      "y": -1537.133549437975
+    },
+    "arch:arch_router:api_admin:sm006": {
+      "x": -5552.515247225647,
+      "y": -3070.3741854664986
+    },
+    "arch:arch_router:api_auth:sm006": {
+      "x": -5572.468126973072,
+      "y": -2915.5604235506053
+    },
+    "arch:arch_router:api_public:sm006": {
+      "x": -5510.491357862249,
+      "y": -2489.9808241800174
+    },
+    "arch:arch_layer:service:sm001": {
+      "x": -4887.18882738333,
+      "y": -2120.1763732195013
+    },
+    "arch:arch_module:admin_pages:sm002": {
+      "x": -5378.75164810669,
+      "y": -1509.0092552095261
+    },
+    "arch:arch_module:public_pages:sm002": {
+      "x": -4635.516988168405,
+      "y": -382.5360390113675
+    },
+    "arch:arch_module:ui_components:sm002": {
+      "x": -4644.318282533868,
+      "y": -268.78253893516217
+    },
+    "arch:arch_controller:api_admin_analytics:sm007": {
+      "x": -3878.0878146265086,
+      "y": -3324.880225280971
+    },
+    "arch:arch_controller:api_admin_categories:sm007": {
+      "x": -3567.3393246540977,
+      "y": -3805.554782587705
+    },
+    "arch:arch_controller:api_admin_messages:sm007": {
+      "x": -3562.145909169027,
+      "y": -3748.833938771257
+    },
+    "arch:arch_controller:api_admin_orders:sm007": {
+      "x": -3560.183822611652,
+      "y": -3692.1805358040447
+    },
+    "arch:arch_controller:api_admin_products:sm007": {
+      "x": -3561.1648658903396,
+      "y": -3630.2662765025275
+    },
+    "arch:arch_controller:api_admin_requests:sm007": {
+      "x": -3557.8660961134074,
+      "y": -3572.631830256629
+    },
+    "arch:arch_controller:api_admin_reviews:sm007": {
+      "x": -3557.8660961134074,
+      "y": -3511.698614233798
+    },
+    "arch:arch_controller:api_admin_sync_images:sm007": {
+      "x": -3871.168144367707,
+      "y": -3219.0562957500542
+    },
+    "arch:arch_controller:api_admin_upload:sm007": {
+      "x": -3870.0577438946025,
+      "y": -3163.5432975819945
+    },
+    "arch:arch_controller:api_admin_users:sm007": {
+      "x": -3872.624081374457,
+      "y": -3271.6247377582795
+    },
+    "arch:arch_controller:api_auth_nextauth:sm009": {
+      "x": -3868.8314508439175,
+      "y": -3057.5073180487607
+    },
+    "arch:arch_controller:api_auth_register:sm009": {
+      "x": -3869.8384853254147,
+      "y": -3107.58150087909
+    },
+    "arch:arch_controller:api_cart:sm008": {
+      "x": -2199.3345124391626,
+      "y": -1291.0650718280244
+    },
+    "arch:arch_controller:api_contacts:sm008": {
+      "x": -4408.703218196792,
+      "y": -2791.4316836652033
+    },
+    "arch:arch_controller:api_favorites:sm008": {
+      "x": -4400.07109244562,
+      "y": -2714.638929158172
+    },
+    "arch:arch_controller:api_orders:sm008": {
+      "x": -4399.826051686412,
+      "y": -2632.684919675246
+    },
+    "arch:arch_controller:api_reviews:sm008": {
+      "x": -4396.517549527,
+      "y": -2567.4998772254858
+    },
+    "arch:arch_controller:api_search:sm008": {
+      "x": -2207.9253044561056,
+      "y": -1225.4054439309157
+    },
+    "arch:arch_controller:api_user_addresses:sm008": {
+      "x": -4412.966065495673,
+      "y": -2863.8458933746424
+    },
+    "arch:arch_controller:api_user_profile:sm008": {
+      "x": -4417.469410776438,
+      "y": -2938.0172792766716
+    },
+    "arch:arch_handler:auth_provider:sm011": {
+      "x": -3182.3626102295793,
+      "y": -1938.5372892037494
+    },
+    "arch:arch_service:auth_service:sm011": {
+      "x": -2200.9591103013254,
+      "y": -1415.441621700831
+    },
+    "arch:arch_service:cart_context:sm011": {
+      "x": -2686.1711757768135,
+      "y": -1191.4639961924563
+    },
+    "arch:arch_layer:data:sm001": {
+      "x": -2197.6349952582113,
+      "y": -1359.445295709329
+    },
+    "arch:arch_service:imagekit_service:sm011": {
+      "x": -3174.461749686854,
+      "y": -1858.8443679230252
+    },
+    "arch:arch_service:product_service:sm011": {
+      "x": -3125.0813780899625,
+      "y": -964.6367196581532
+    },
+    "arch:arch_service:utils_service:sm011": {
+      "x": -4547.27190537343,
+      "y": -1856.2997723998951
+    },
+    "arch:arch_controller:admin_analytics:sm004": {
+      "x": -4551.519273539411,
+      "y": -1794.524329321961
+    },
+    "arch:arch_controller:admin_dashboard:sm004": {
+      "x": -4554.527353766453,
+      "y": -1566.5557923902593
+    },
+    "arch:arch_controller:admin_requests:sm004": {
+      "x": -4545.389485087898,
+      "y": -1489.658741818701
+    },
+    "arch:arch_controller:admin_order_history:sm004": {
+      "x": -4545.389485087898,
+      "y": -1408.1927569078648
+    },
+    "arch:arch_controller:admin_reviews:sm004": {
+      "x": -4545.389485087898,
+      "y": -1331.295706336307
+    },
+    "arch:arch_controller:admin_messages:sm004": {
+      "x": -4545.389485087898,
+      "y": -1245.2607870861934
+    },
+    "arch:arch_controller:admin_orders:sm004": {
+      "x": -4545.389485087898,
+      "y": -1159.22586783608
+    },
+    "arch:arch_controller:admin_categories:sm004": {
+      "x": -4531.682682070065,
+      "y": -1064.0530799074108
+    },
+    "arch:arch_controller:admin_users:sm004": {
+      "x": -4552.178238895037,
+      "y": -1649.6515085311057
+    },
+    "arch:arch_controller:admin_products:sm004": {
+      "x": -4547.491164656775,
+      "y": -1728.1287391051337
+    },
+    "arch:arch_controller:homepage:sm003": {
+      "x": -4086.728652602948,
+      "y": -1208.4671296990537
+    },
+    "arch:arch_controller:favorites_page:sm003": {
+      "x": -4083.54654570704,
+      "y": -1048.3232626586516
+    },
+    "arch:arch_controller:catalog_page:sm003": {
+      "x": -4094.2647898009704,
+      "y": -1367.352207305923
+    },
+    "arch:arch_controller:contacts_page:sm003": {
+      "x": -4066.2973463411276,
+      "y": -751.8239604408855
+    },
+    "arch:arch_controller:cart_page:sm003": {
+      "x": -4103.899353284245,
+      "y": -1521.5775686582422
+    },
+    "arch:arch_controller:account_page:sm003": {
+      "x": -4074.2523230665697,
+      "y": -829.6853548993931
+    },
+    "arch:arch_controller:login_page:sm003": {
+      "x": -4066.2973463411276,
+      "y": -683.6628432621142
+    },
+    "arch:arch_controller:about_page:sm003": {
+      "x": -4074.2523230665697,
+      "y": -903.5692609951793
+    },
+    "arch:arch_controller:checkout_page:sm003": {
+      "x": -4102.634771664336,
+      "y": -1442.6829999501495
+    },
+    "arch:arch_controller:support_page:sm003": {
+      "x": -4082.207299792012,
+      "y": -977.4531670909653
+    },
+    "arch:arch_controller:product_page:sm003": {
+      "x": -4096.162019503121,
+      "y": -1283.5069460615564
+    },
+    "arch:arch_entry_interface:admin_sidebar:sm005": {
+      "x": -3996.3497513365205,
+      "y": -44.59160688090384
+    },
+    "arch:arch_entry_interface:footer:sm005": {
+      "x": -3997.7030760194334,
+      "y": 27.500650448640954
+    },
+    "arch:arch_entry_interface:global_search:sm005": {
+      "x": -3114.9910424279333,
+      "y": -782.9275361243006
+    },
+    "arch:arch_entry_interface:header:sm005": {
+      "x": -3114.147476242312,
+      "y": -879.9893941508062
+    },
+    "arch:arch_entry_interface:ui_kit:sm005": {
+      "x": -3995.0376694966158,
+      "y": -117.15343379276698
+    },
+    "arch:arch_repository:prisma_client:sm012": {
+      "x": -1623.1645520108639,
+      "y": -1652.3069110244253
+    },
+    "arch:arch_middleware:auth_middleware:sm010": {
+      "x": -3171.5454588220564,
+      "y": -2024.5478060662779
+    },
+    "arch:arch_layer:infra:sm001": {
+      "x": -1222.3463825793604,
+      "y": -1423.7780205428717
+    },
+    "arch:arch_service:imagekit_cdn:sm017": {
+      "x": -679.8677605278974,
+      "y": -870.3427961135128
+    },
+    "arch:arch_model:address:sm013": {
+      "x": -741.9878809714971,
+      "y": -2444.5175063760857
+    },
+    "arch:arch_model:analytics_reset:sm013": {
+      "x": -741.9878809714971,
+      "y": -2386.8830601301875
+    },
+    "arch:arch_model:cart_item:sm013": {
+      "x": -741.9878809714971,
+      "y": -2325.949844107357
+    },
+    "arch:arch_model:category:sm013": {
+      "x": -738.6891111945649,
+      "y": -2269.9647827499252
+    },
+    "arch:arch_model:contact_message:sm013": {
+      "x": -739.6979602488716,
+      "y": -2213.9797213924926
+    },
+    "arch:arch_model:favorite:sm013": {
+      "x": -735.6038533623525,
+      "y": -2154.695890258127
+    },
+    "arch:arch_model:manager_request:sm013": {
+      "x": -733.7409565291666,
+      "y": -2090.4639044583646
+    },
+    "arch:arch_model:order:sm013": {
+      "x": -732.8869087502874,
+      "y": -2032.8294582124654
+    },
+    "arch:arch_model:order_item:sm013": {
+      "x": -728.7928018637683,
+      "y": -1970.2468573011693
+    },
+    "arch:arch_model:order_status_history:sm013": {
+      "x": -728.2109766989017,
+      "y": -1912.6124110552712
+    },
+    "arch:arch_eloquent:prisma_adapter_pg:sm014": {
+      "x": -1213.6047081218405,
+      "y": -1489.2189678951484
+    },
+    "arch:arch_model:product:sm013": {
+      "x": -727.1072968358264,
+      "y": -1854.2021452664114
+    },
+    "arch:arch_model:review:sm013": {
+      "x": -725.6714238920802,
+      "y": -1794.6621407224277
+    },
+    "arch:arch_model:review_action_log:sm013": {
+      "x": -725.6714238920802,
+      "y": -1736.5580091221893
+    },
+    "arch:arch_model:user:sm013": {
+      "x": -725.6714238920802,
+      "y": -1682.7614963531898
+    },
+    "arch:arch_database:postgresql:sm015": {
+      "x": -364.6515218091183,
+      "y": -1214.9181839415648
+    },
+    "arch:arch_migration:prisma_migrations:sm016": {
+      "x": -697.7921200690487,
+      "y": -1000.4326111887046
+    },
+    "arch:arch_seeder:prisma_seed:sm016": {
+      "x": -697.7921200690491,
+      "y": -930.4326111887046
+    },
+    "arch:entry:1773151208147-5pflyr02": {
+      "x": -6074.045763978605,
+      "y": -462.3090759017245
+    }
+  },
+  "graphViewport": {
+    "x": 1110.4653707678012,
+    "y": 644.1472289085107,
+    "zoom": 0.15157165665104178
+  }
+}

@@ -1,0 +1,60 @@
+/* ReviewsSection.module.css */
+
+.reviewCard {
+  background: white;
+  border: 1.5px solid var(--color-border);
+  border-radius: 16px;
+  padding: 24px;
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.reviewCard:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 12px;
+  color: #f59e0b;
+  font-size: 1rem;
+}
+
+.reviewText {
+  font-size: 0.9rem;
+  color: var(--color-gray-600);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.reviewAuthor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reviewAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary-400), var(--color-primary-600));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.reviewName {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-gray-900);
+}
+
+.reviewRole {
+  font-size: 0.75rem;
+  color: var(--color-gray-500);
+}

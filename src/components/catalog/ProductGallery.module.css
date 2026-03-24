@@ -1,0 +1,325 @@
+.container {
+    display: flex;
+    gap: 16px;
+    height: 500px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* Убираем горизонтальный скролл */
+    padding-right: 4px;
+}
+
+/* Стилизация скроллбара для сайдбара с миниатюрами */
+.sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: var(--color-gray-200);
+    border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gray-300);
+}
+
+.thumbWrapper {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    border: 2px solid var(--color-border);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    background: white;
+    padding: 0;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.thumbWrapper:hover {
+    border-color: var(--color-gray-400);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.thumbWrapper.active {
+    border-color: var(--color-primary-600);
+    box-shadow: 0 0 0 2px rgba(var(--color-primary-600-rgb), 0.1);
+}
+
+.thumbnail {
+    object-fit: contain;
+    padding: 6px;
+}
+
+.mainDisplay {
+    flex: 1;
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.06);
+}
+
+.mainImageWrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.mainImage {
+    object-fit: contain;
+    padding: 32px;
+    transition: transform 0.3s ease;
+}
+
+.noImageBox {
+    width: 100%;
+    height: 500px;
+    background: var(--color-bg-subtle);
+    border: 2px dashed var(--color-border);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gray-400);
+}
+
+.emptyIcon {
+    font-size: 5rem;
+    margin-bottom: 16px;
+    opacity: 0.5;
+}
+
+/* Навигационные кнопки */
+.navButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    font-size: 1.2rem;
+    color: var(--color-gray-800);
+}
+
+.navButton:hover {
+    background: var(--color-primary-600);
+    color: white;
+    border-color: var(--color-primary-600);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.navButton.prev {
+    left: 16px;
+}
+
+.navButton.next {
+    right: 16px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column-reverse;
+        height: auto;
+        gap: 20px;
+    }
+
+    .sidebar {
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 4px 0 12px;
+    }
+
+    .thumbWrapper {
+        width: 70px;
+        height: 70px;
+    }
+
+    .mainDisplay {
+        aspect-ratio: 1/1;
+        height: auto;
+    }
+
+    .mainImage {
+        padding: 16px;
+    }
+
+    .navButton {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* Modal (Lightbox) Styles */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+}
+
+.modalImageNative {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    display: block;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    user-select: none;
+    z-index: 100;
+}
+
+.modalCloseButton {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 3.5rem;
+    cursor: pointer;
+    z-index: 10001;
+    /* Highest to ensure clickability */
+    transition: color 0.2s, transform 0.2s;
+    line-height: 1;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalCloseButton:hover {
+    color: var(--color-gray-300);
+    transform: scale(1.1);
+}
+
+.navAreaFixed {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 15vw;
+    min-width: 80px;
+    max-width: 200px;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.navAreaLeft {
+    left: 0;
+    justify-content: flex-start;
+    padding-left: 40px;
+}
+
+.navAreaRight {
+    right: 0;
+    justify-content: flex-end;
+    padding-right: 40px;
+}
+
+.modalNavButton {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2.2rem;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(4px);
+}
+
+.navAreaFixed:hover .modalNavButton {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.modalCounter {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 8px 20px;
+    border-radius: 20px;
+    z-index: 10000;
+    backdrop-filter: blur(4px);
+}
+
+@media (max-width: 768px) {
+    .modalImageNative {
+        max-width: 100vw;
+        max-height: 80vh;
+        border-radius: 0;
+    }
+
+    .modalCloseButton {
+        top: 16px;
+        right: 16px;
+        font-size: 3rem;
+        padding: 4px;
+    }
+
+    .navAreaFixed {
+        width: 20vw;
+    }
+
+    .navAreaLeft {
+        padding-left: 16px;
+    }
+
+    .navAreaRight {
+        padding-right: 16px;
+    }
+
+    .modalNavButton {
+        width: 48px;
+        height: 48px;
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,64 @@
+.favoriteBtn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: white;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--color-gray-400);
+    transition: all 0.2s ease;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+}
+
+:global([data-product-card]):hover .favoriteBtn {
+    opacity: 1;
+    visibility: visible;
+}
+
+.favoriteBtn:hover {
+    color: var(--color-primary-600);
+    transform: scale(1.05);
+}
+
+.favoriteBtn.active {
+    color: #ef4444;
+    opacity: 1;
+    visibility: visible;
+}
+
+.favoriteBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.loading {
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        opacity: 0.5;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+@media (max-width: 768px) {
+    .favoriteBtn {
+        opacity: 1;
+        visibility: visible;
+    }
+}

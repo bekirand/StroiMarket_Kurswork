@@ -1,0 +1,101 @@
+/* ===== ИНПУТ — Input.module.css ===== */
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-1);
+}
+
+.label {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-gray-700);
+}
+
+.required {
+    color: var(--color-danger);
+    margin-left: 2px;
+}
+
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    width: 100%;
+    padding: var(--spacing-2) var(--spacing-4);
+    font-size: var(--font-size-base);
+    font-family: var(--font-family);
+    color: var(--color-text);
+    background: var(--color-bg);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    outline: none;
+}
+
+.input::placeholder {
+    color: var(--color-text-subtle);
+}
+
+.input:hover {
+    border-color: var(--color-gray-400);
+}
+
+.input:focus {
+    border-color: var(--color-border-focus);
+    box-shadow: 0 0 0 3px rgb(59 130 246 / 0.15);
+}
+
+/* --- Состояния --- */
+.error .input {
+    border-color: var(--color-danger);
+}
+
+.error .input:focus {
+    box-shadow: 0 0 0 3px rgb(239 68 68 / 0.15);
+}
+
+.success .input {
+    border-color: var(--color-success);
+}
+
+/* --- Иконки --- */
+.iconLeft .input {
+    padding-left: 2.5rem;
+}
+
+.iconRight .input {
+    padding-right: 2.5rem;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+}
+
+.icon.left {
+    left: var(--spacing-3);
+}
+
+.icon.right {
+    right: var(--spacing-3);
+}
+
+/* --- Подсказка / ошибка --- */
+.hint {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+.errorText {
+    font-size: var(--font-size-sm);
+    color: var(--color-danger);
+}

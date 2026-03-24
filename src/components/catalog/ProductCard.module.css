@@ -1,0 +1,142 @@
+/* ProductCard.module.css */
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 1.5px solid var(--color-border);
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 28px rgba(37, 99, 235, 0.15);
+    transform: translateY(-3px);
+}
+
+/* Блок с фото */
+.imageWrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--color-bg-subtle);
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.card:hover .image {
+    transform: scale(1.06);
+}
+
+/* Заглушка когда нет фото */
+.imagePlaceholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+}
+
+/* Бейдж скидки */
+.discountBadge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #ef4444;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 8px;
+}
+
+/* Тело карточки */
+.body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 16px;
+    gap: 8px;
+}
+
+/* Категория */
+.category {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--color-primary-600);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Название */
+.name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-gray-900);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Цены */
+.priceRow {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--color-gray-900);
+}
+
+.oldPrice {
+    font-size: 0.875rem;
+    color: var(--color-gray-400);
+    text-decoration: line-through;
+}
+
+.unit {
+    font-size: 0.8rem;
+    color: var(--color-gray-500);
+    margin-left: auto;
+}
+
+/* Кнопка и наличие */
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 0 16px 16px;
+}
+
+.stock {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.inStock {
+    color: #10b981;
+}
+
+.outStock {
+    color: #ef4444;
+}

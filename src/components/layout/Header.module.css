@@ -1,0 +1,250 @@
+/* ===== HEADER — Header.module.css ===== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+/* Тень появляется при прокрутке (добавляется через JS) */
+.header.scrolled {
+    border-bottom-color: var(--color-border);
+    box-shadow: 0 1px 20px rgb(0 0 0 / 0.08);
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-6);
+    height: 70px;
+}
+
+/* ===== ЛОГОТИП ===== */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    text-decoration: none;
+    flex-shrink: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.logo:hover {
+    opacity: 0.85;
+}
+
+.logoIcon {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-800));
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgb(37 99 235 / 0.35);
+}
+
+.logoText {
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    color: var(--color-gray-900);
+    letter-spacing: -0.025em;
+}
+
+.logoAccent {
+    color: var(--color-primary-600);
+}
+
+/* ===== НАВИГАЦИЯ ===== */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-1);
+    flex: 1;
+}
+
+.navLink {
+    padding: var(--spacing-2) var(--spacing-3);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-gray-600);
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    transition: background var(--transition-fast), color var(--transition-fast);
+    white-space: nowrap;
+}
+
+.navLink:hover {
+    background: var(--color-gray-100);
+    color: var(--color-gray-900);
+}
+
+.navLink.active {
+    background: var(--color-primary-50);
+    color: var(--color-primary-700);
+    font-weight: 600;
+}
+
+/* ===== ПОИСК ===== */
+.searchWrapper {
+    flex: 1;
+    max-width: 380px;
+}
+
+.searchInput {
+    width: 100%;
+    padding: var(--spacing-2) var(--spacing-4) var(--spacing-2) 2.5rem;
+    font-size: var(--font-size-sm);
+    font-family: var(--font-family);
+    color: var(--color-text);
+    background: var(--color-bg-subtle);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-full);
+    outline: none;
+    transition: all var(--transition-fast);
+}
+
+.searchInput::placeholder {
+    color: var(--color-text-subtle);
+}
+
+.searchInput:focus {
+    border-color: var(--color-border-focus);
+    background: var(--color-bg);
+    box-shadow: 0 0 0 3px rgb(59 130 246 / 0.12);
+}
+
+.searchIcon {
+    position: absolute;
+    left: var(--spacing-3);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    pointer-events: none;
+}
+
+.searchContainer {
+    position: relative;
+}
+
+/* ===== ПРАВАЯ ЧАСТЬ (действия) ===== */
+.actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+    flex-shrink: 0;
+}
+
+/* Кнопка корзины */
+.cartButton {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: var(--radius-lg);
+    color: var(--color-gray-700);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.cartButton:hover {
+    background: var(--color-gray-100);
+    color: var(--color-primary-600);
+}
+
+/* Счётчик в корзине */
+.cartBadge {
+    position: absolute;
+    top: 2px;
+    right: 0px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    background: #ef4444;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    border: 2px solid white;
+    box-sizing: content-box;
+}
+
+/* ===== МОБИЛЬНОЕ МЕНЮ ===== */
+.menuToggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-lg);
+    color: var(--color-gray-700);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.menuToggle:hover {
+    background: var(--color-gray-100);
+}
+
+.mobileMenu {
+    display: none;
+    flex-direction: column;
+    padding: var(--spacing-4);
+    border-top: 1px solid var(--color-border);
+    background: var(--color-bg);
+    gap: var(--spacing-1);
+}
+
+.mobileMenu.open {
+    display: flex;
+}
+
+.mobileNavLink {
+    padding: var(--spacing-3) var(--spacing-4);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    color: var(--color-gray-700);
+    text-decoration: none;
+    border-radius: var(--radius-lg);
+    transition: background var(--transition-fast);
+}
+
+.mobileNavLink:hover {
+    background: var(--color-gray-100);
+    color: var(--color-gray-900);
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 768px) {
+
+    .nav,
+    .searchWrapper {
+        display: none;
+    }
+
+    .menuToggle {
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .logoText {
+        display: none;
+    }
+}

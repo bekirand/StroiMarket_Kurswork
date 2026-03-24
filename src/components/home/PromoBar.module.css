@@ -1,0 +1,62 @@
+/* ===== PromoBar — полоска акции выше шапки ===== */
+
+.bar {
+    background: linear-gradient(90deg, var(--color-primary-600), var(--color-primary-800));
+    color: white;
+    padding: 10px var(--spacing-4);
+    text-align: center;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    position: relative;
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-6);
+    flex-wrap: wrap;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    white-space: nowrap;
+}
+
+.divider {
+    width: 1px;
+    height: 14px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Кнопка закрыть */
+.close {
+    position: absolute;
+    right: var(--spacing-4);
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    padding: 4px;
+    line-height: 1;
+    font-size: 16px;
+    transition: color var(--transition-fast);
+}
+
+.close:hover {
+    color: white;
+}
+
+@media (max-width: 640px) {
+    .divider {
+        display: none;
+    }
+
+    .item:not(:first-child) {
+        display: none;
+    }
+}

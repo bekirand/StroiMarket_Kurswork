@@ -1,0 +1,241 @@
+/* Product.module.css */
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.875rem;
+    color: var(--color-gray-500);
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.breadcrumb a {
+    color: var(--color-primary-600);
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* === Основная секция === */
+.product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+@media (max-width: 768px) {
+    .product {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+
+/* === Информация === */
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.catBadge {
+    display: inline-flex;
+    padding: 4px 12px;
+    background: var(--color-primary-50);
+    color: var(--color-primary-700);
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    width: fit-content;
+}
+
+.name {
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    font-weight: 800;
+    color: var(--color-gray-900);
+    line-height: 1.3;
+}
+
+.skuLine {
+    font-size: 0.875rem;
+    color: var(--color-gray-500);
+}
+
+/* === Цены === */
+.priceBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.mainPrice {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-gray-900);
+}
+
+.perUnit {
+    font-size: 1rem;
+    color: var(--color-gray-500);
+    margin-left: 4px;
+}
+
+.priceDetails {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.oldPrice {
+    font-size: 1rem;
+    color: var(--color-gray-400);
+    text-decoration: line-through;
+}
+
+.saveBadge {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #10b981;
+    background: #ecfdf5;
+    padding: 3px 8px;
+    border-radius: 8px;
+}
+
+/* === Характеристики === */
+.attrs {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1.5px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.attr {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 14px;
+    font-size: 0.875rem;
+}
+
+.attr:not(:last-child) {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.attrKey {
+    color: var(--color-gray-500);
+}
+
+.attrVal {
+    font-weight: 600;
+    color: var(--color-gray-800);
+}
+
+.green {
+    color: #10b981 !important;
+}
+
+.red {
+    color: #ef4444 !important;
+}
+
+/* === Кнопки === */
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.cartLink {
+    font-size: 0.875rem;
+    color: var(--color-primary-600);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.cartLink:hover {
+    text-decoration: underline;
+}
+
+/* === Описание === */
+.description {
+    padding-top: 8px;
+    border-top: 1px solid var(--color-border);
+}
+
+.descTitle {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--color-gray-900);
+}
+
+.descText {
+    font-size: 0.9rem;
+    color: var(--color-gray-600);
+    line-height: 1.75;
+}
+
+/* ===== ХАРАКТЕРИСТИКИ ===== */
+.featuresSection {
+    margin-top: 48px;
+    padding-top: 40px;
+    border-top: 1px solid var(--color-border);
+}
+
+.featuresTitle {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-gray-900);
+    margin: 0 0 24px;
+}
+
+.featuresGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 48px;
+}
+
+@media (max-width: 900px) {
+    .featuresGrid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
+
+.featureRow {
+    display: flex;
+    align-items: baseline;
+    font-size: 0.95rem;
+}
+
+.featureName {
+    color: var(--color-gray-500);
+    white-space: nowrap;
+}
+
+.featureDots {
+    flex-grow: 1;
+    border-bottom: 2px dotted var(--color-gray-300);
+    margin: 0 12px;
+    position: relative;
+    top: -4px;
+}
+
+.featureValue {
+    color: var(--color-gray-900);
+    text-align: right;
+    font-weight: 500;
+    max-width: 60%;
+    word-wrap: break-word;
+}
+
+.featureDisclaimer {
+    margin-top: 32px;
+    font-size: 0.8rem;
+    color: var(--color-gray-400);
+    line-height: 1.5;
+}

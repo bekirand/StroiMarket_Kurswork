@@ -1,0 +1,1253 @@
+{
+  "arcforge": "arcforge:architecture",
+  "version": "1.0",
+  "nodes": [
+    {
+      "id": "arch:entry",
+      "type": "arch_entry",
+      "label": "Entry",
+      "metadata": {
+        "x": 500,
+        "y": 100
+      }
+    },
+    {
+      "id": "arch:arch_layer:presentation:sm001",
+      "type": "arch_layer",
+      "label": "Presentation Layer",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_layer:api:sm001",
+      "type": "arch_layer",
+      "label": "API Layer",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_layer:service:sm001",
+      "type": "arch_layer",
+      "label": "Service / Business Logic",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_layer:data:sm001",
+      "type": "arch_layer",
+      "label": "Data Access Layer",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_layer:infra:sm001",
+      "type": "arch_layer",
+      "label": "Infrastructure",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_module:public_pages:sm002",
+      "type": "arch_module",
+      "label": "Public Pages (SSR)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_module:admin_pages:sm002",
+      "type": "arch_module",
+      "label": "Admin Panel (SSR)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_module:ui_components:sm002",
+      "type": "arch_module",
+      "label": "UI Components",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:homepage:sm003",
+      "type": "arch_controller",
+      "label": "Главная (Home)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:catalog_page:sm003",
+      "type": "arch_controller",
+      "label": "Каталог (Catalog)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:product_page:sm003",
+      "type": "arch_controller",
+      "label": "Товар (Product [sku])",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:cart_page:sm003",
+      "type": "arch_controller",
+      "label": "Корзина (Cart)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:checkout_page:sm003",
+      "type": "arch_controller",
+      "label": "Оформление (Checkout)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:favorites_page:sm003",
+      "type": "arch_controller",
+      "label": "Избранное (Favorites)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:account_page:sm003",
+      "type": "arch_controller",
+      "label": "Личный кабинет (Account)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:login_page:sm003",
+      "type": "arch_controller",
+      "label": "Логин / Регистрация",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:contacts_page:sm003",
+      "type": "arch_controller",
+      "label": "Контакты (Contacts)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:about_page:sm003",
+      "type": "arch_controller",
+      "label": "О компании (About)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:support_page:sm003",
+      "type": "arch_controller",
+      "label": "Поддержка (Support)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:admin_dashboard:sm004",
+      "type": "arch_controller",
+      "label": "Дашборд админа",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:admin_products:sm004",
+      "type": "arch_controller",
+      "label": "Управление товарами",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:admin_categories:sm004",
+      "type": "arch_controller",
+      "label": "Управление категориями",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:admin_orders:sm004",
+      "type": "arch_controller",
+      "label": "Управление заказами",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:admin_users:sm004",
+      "type": "arch_controller",
+      "label": "Управление пользователями",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:admin_reviews:sm004",
+      "type": "arch_controller",
+      "label": "Модерация отзывов",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:admin_messages:sm004",
+      "type": "arch_controller",
+      "label": "Сообщения контактов",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:admin_requests:sm004",
+      "type": "arch_controller",
+      "label": "Заявления менеджеров",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:admin_analytics:sm004",
+      "type": "arch_controller",
+      "label": "Аналитика (Recharts)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:admin_order_history:sm004",
+      "type": "arch_controller",
+      "label": "История заказов",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_entry_interface:header:sm005",
+      "type": "arch_entry_interface",
+      "label": "Header + Navigation",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_entry_interface:footer:sm005",
+      "type": "arch_entry_interface",
+      "label": "Footer",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_entry_interface:global_search:sm005",
+      "type": "arch_entry_interface",
+      "label": "GlobalSearch",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_entry_interface:admin_sidebar:sm005",
+      "type": "arch_entry_interface",
+      "label": "Admin Sidebar",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_entry_interface:ui_kit:sm005",
+      "type": "arch_entry_interface",
+      "label": "UI Kit (Button, Input, Card, Badge)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_router:api_admin:sm006",
+      "type": "arch_router",
+      "label": "Admin API Routes",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_router:api_public:sm006",
+      "type": "arch_router",
+      "label": "Public API Routes",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_router:api_auth:sm006",
+      "type": "arch_router",
+      "label": "Auth API (NextAuth)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:api_admin_products:sm007",
+      "type": "arch_controller",
+      "label": "API: Products CRUD",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:api_admin_categories:sm007",
+      "type": "arch_controller",
+      "label": "API: Categories CRUD",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:api_admin_orders:sm007",
+      "type": "arch_controller",
+      "label": "API: Orders Mgmt",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:api_admin_users:sm007",
+      "type": "arch_controller",
+      "label": "API: Users Mgmt",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:api_admin_reviews:sm007",
+      "type": "arch_controller",
+      "label": "API: Reviews Moderation",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:api_admin_messages:sm007",
+      "type": "arch_controller",
+      "label": "API: Messages CRUD",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:api_admin_requests:sm007",
+      "type": "arch_controller",
+      "label": "API: Requests Mgmt",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:api_admin_analytics:sm007",
+      "type": "arch_controller",
+      "label": "API: Analytics + Reset",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:api_admin_upload:sm007",
+      "type": "arch_controller",
+      "label": "API: Upload (ImageKit)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:api_admin_sync_images:sm007",
+      "type": "arch_controller",
+      "label": "API: Sync Images",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:api_cart:sm008",
+      "type": "arch_controller",
+      "label": "API: Cart",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:api_favorites:sm008",
+      "type": "arch_controller",
+      "label": "API: Favorites",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:api_orders:sm008",
+      "type": "arch_controller",
+      "label": "API: Orders (create)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:api_reviews:sm008",
+      "type": "arch_controller",
+      "label": "API: Reviews (public)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:api_search:sm008",
+      "type": "arch_controller",
+      "label": "API: Search",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:api_contacts:sm008",
+      "type": "arch_controller",
+      "label": "API: Contacts",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:api_user_profile:sm008",
+      "type": "arch_controller",
+      "label": "API: User Profile",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:api_user_addresses:sm008",
+      "type": "arch_controller",
+      "label": "API: User Addresses",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:api_auth_nextauth:sm009",
+      "type": "arch_controller",
+      "label": "API: [...nextauth] handler",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_controller:api_auth_register:sm009",
+      "type": "arch_controller",
+      "label": "API: Register",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_middleware:auth_middleware:sm010",
+      "type": "arch_middleware",
+      "label": "NextAuth Middleware (JWT)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_service:auth_service:sm011",
+      "type": "arch_service",
+      "label": "AuthService (auth.ts + auth.config.ts)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_service:product_service:sm011",
+      "type": "arch_service",
+      "label": "ProductService (products.ts)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_service:imagekit_service:sm011",
+      "type": "arch_service",
+      "label": "ImageKitService (imagekit.ts)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_service:utils_service:sm011",
+      "type": "arch_service",
+      "label": "Utils (utils.ts)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_service:cart_context:sm011",
+      "type": "arch_service",
+      "label": "CartContext (React Context)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_handler:auth_provider:sm011",
+      "type": "arch_handler",
+      "label": "AuthProvider (SessionProvider)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_repository:prisma_client:sm012",
+      "type": "arch_repository",
+      "label": "Prisma Client (Singleton)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_model:user:sm013",
+      "type": "arch_model",
+      "label": "User",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_model:product:sm013",
+      "type": "arch_model",
+      "label": "Product",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_model:category:sm013",
+      "type": "arch_model",
+      "label": "Category",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_model:order:sm013",
+      "type": "arch_model",
+      "label": "Order",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_model:order_item:sm013",
+      "type": "arch_model",
+      "label": "OrderItem",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_model:cart_item:sm013",
+      "type": "arch_model",
+      "label": "CartItem",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_model:address:sm013",
+      "type": "arch_model",
+      "label": "Address",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_model:favorite:sm013",
+      "type": "arch_model",
+      "label": "Favorite",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_model:review:sm013",
+      "type": "arch_model",
+      "label": "Review",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_model:review_action_log:sm013",
+      "type": "arch_model",
+      "label": "ReviewActionLog",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_model:manager_request:sm013",
+      "type": "arch_model",
+      "label": "ManagerRequest",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_model:order_status_history:sm013",
+      "type": "arch_model",
+      "label": "OrderStatusHistory",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_model:contact_message:sm013",
+      "type": "arch_model",
+      "label": "ContactMessage",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_model:analytics_reset:sm013",
+      "type": "arch_model",
+      "label": "AnalyticsReset",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_eloquent:prisma_adapter_pg:sm014",
+      "type": "arch_eloquent",
+      "label": "PrismaPg Adapter (@prisma/adapter-pg)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_database:postgresql:sm015",
+      "type": "arch_database",
+      "label": "PostgreSQL (Supabase)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_migration:prisma_migrations:sm016",
+      "type": "arch_migration",
+      "label": "Prisma Migrations",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_seeder:prisma_seed:sm016",
+      "type": "arch_seeder",
+      "label": "Prisma Seed (seed.ts)",
+      "metadata": {}
+    },
+    {
+      "id": "arch:arch_service:imagekit_cdn:sm017",
+      "type": "arch_service",
+      "label": "ImageKit CDN (External)",
+      "metadata": {}
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge:entry_to_presentation",
+      "from": "arch:entry",
+      "to": "arch:arch_layer:presentation:sm001",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:entry_to_api",
+      "from": "arch:entry",
+      "to": "arch:arch_layer:api:sm001",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:presentation_to_public",
+      "from": "arch:arch_layer:presentation:sm001",
+      "to": "arch:arch_module:public_pages:sm002",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:presentation_to_admin",
+      "from": "arch:arch_layer:presentation:sm001",
+      "to": "arch:arch_module:admin_pages:sm002",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:presentation_to_ui",
+      "from": "arch:arch_layer:presentation:sm001",
+      "to": "arch:arch_module:ui_components:sm002",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:public_to_home",
+      "from": "arch:arch_module:public_pages:sm002",
+      "to": "arch:arch_controller:homepage:sm003",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:public_to_catalog",
+      "from": "arch:arch_module:public_pages:sm002",
+      "to": "arch:arch_controller:catalog_page:sm003",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:public_to_product",
+      "from": "arch:arch_module:public_pages:sm002",
+      "to": "arch:arch_controller:product_page:sm003",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:public_to_cart",
+      "from": "arch:arch_module:public_pages:sm002",
+      "to": "arch:arch_controller:cart_page:sm003",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:public_to_checkout",
+      "from": "arch:arch_module:public_pages:sm002",
+      "to": "arch:arch_controller:checkout_page:sm003",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:public_to_favorites",
+      "from": "arch:arch_module:public_pages:sm002",
+      "to": "arch:arch_controller:favorites_page:sm003",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:public_to_account",
+      "from": "arch:arch_module:public_pages:sm002",
+      "to": "arch:arch_controller:account_page:sm003",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:public_to_login",
+      "from": "arch:arch_module:public_pages:sm002",
+      "to": "arch:arch_controller:login_page:sm003",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:public_to_contacts",
+      "from": "arch:arch_module:public_pages:sm002",
+      "to": "arch:arch_controller:contacts_page:sm003",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:public_to_about",
+      "from": "arch:arch_module:public_pages:sm002",
+      "to": "arch:arch_controller:about_page:sm003",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:public_to_support",
+      "from": "arch:arch_module:public_pages:sm002",
+      "to": "arch:arch_controller:support_page:sm003",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_to_dashboard",
+      "from": "arch:arch_module:admin_pages:sm002",
+      "to": "arch:arch_controller:admin_dashboard:sm004",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_to_products",
+      "from": "arch:arch_module:admin_pages:sm002",
+      "to": "arch:arch_controller:admin_products:sm004",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_to_categories",
+      "from": "arch:arch_module:admin_pages:sm002",
+      "to": "arch:arch_controller:admin_categories:sm004",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_to_orders",
+      "from": "arch:arch_module:admin_pages:sm002",
+      "to": "arch:arch_controller:admin_orders:sm004",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_to_users",
+      "from": "arch:arch_module:admin_pages:sm002",
+      "to": "arch:arch_controller:admin_users:sm004",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_to_reviews",
+      "from": "arch:arch_module:admin_pages:sm002",
+      "to": "arch:arch_controller:admin_reviews:sm004",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_to_messages",
+      "from": "arch:arch_module:admin_pages:sm002",
+      "to": "arch:arch_controller:admin_messages:sm004",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_to_requests",
+      "from": "arch:arch_module:admin_pages:sm002",
+      "to": "arch:arch_controller:admin_requests:sm004",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_to_analytics",
+      "from": "arch:arch_module:admin_pages:sm002",
+      "to": "arch:arch_controller:admin_analytics:sm004",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_to_order_history",
+      "from": "arch:arch_module:admin_pages:sm002",
+      "to": "arch:arch_controller:admin_order_history:sm004",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:ui_to_header",
+      "from": "arch:arch_module:ui_components:sm002",
+      "to": "arch:arch_entry_interface:header:sm005",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:ui_to_footer",
+      "from": "arch:arch_module:ui_components:sm002",
+      "to": "arch:arch_entry_interface:footer:sm005",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:ui_to_search",
+      "from": "arch:arch_module:ui_components:sm002",
+      "to": "arch:arch_entry_interface:global_search:sm005",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:ui_to_sidebar",
+      "from": "arch:arch_module:ui_components:sm002",
+      "to": "arch:arch_entry_interface:admin_sidebar:sm005",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:ui_to_uikit",
+      "from": "arch:arch_module:ui_components:sm002",
+      "to": "arch:arch_entry_interface:ui_kit:sm005",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:api_to_admin_router",
+      "from": "arch:arch_layer:api:sm001",
+      "to": "arch:arch_router:api_admin:sm006",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:api_to_public_router",
+      "from": "arch:arch_layer:api:sm001",
+      "to": "arch:arch_router:api_public:sm006",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:api_to_auth_router",
+      "from": "arch:arch_layer:api:sm001",
+      "to": "arch:arch_router:api_auth:sm006",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_router_to_products",
+      "from": "arch:arch_router:api_admin:sm006",
+      "to": "arch:arch_controller:api_admin_products:sm007",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_router_to_categories",
+      "from": "arch:arch_router:api_admin:sm006",
+      "to": "arch:arch_controller:api_admin_categories:sm007",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_router_to_orders",
+      "from": "arch:arch_router:api_admin:sm006",
+      "to": "arch:arch_controller:api_admin_orders:sm007",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_router_to_users",
+      "from": "arch:arch_router:api_admin:sm006",
+      "to": "arch:arch_controller:api_admin_users:sm007",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_router_to_reviews",
+      "from": "arch:arch_router:api_admin:sm006",
+      "to": "arch:arch_controller:api_admin_reviews:sm007",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_router_to_messages",
+      "from": "arch:arch_router:api_admin:sm006",
+      "to": "arch:arch_controller:api_admin_messages:sm007",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_router_to_requests",
+      "from": "arch:arch_router:api_admin:sm006",
+      "to": "arch:arch_controller:api_admin_requests:sm007",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_router_to_analytics",
+      "from": "arch:arch_router:api_admin:sm006",
+      "to": "arch:arch_controller:api_admin_analytics:sm007",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_router_to_upload",
+      "from": "arch:arch_router:api_admin:sm006",
+      "to": "arch:arch_controller:api_admin_upload:sm007",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_router_to_sync",
+      "from": "arch:arch_router:api_admin:sm006",
+      "to": "arch:arch_controller:api_admin_sync_images:sm007",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:public_router_to_cart",
+      "from": "arch:arch_router:api_public:sm006",
+      "to": "arch:arch_controller:api_cart:sm008",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:public_router_to_favorites",
+      "from": "arch:arch_router:api_public:sm006",
+      "to": "arch:arch_controller:api_favorites:sm008",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:public_router_to_orders",
+      "from": "arch:arch_router:api_public:sm006",
+      "to": "arch:arch_controller:api_orders:sm008",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:public_router_to_reviews",
+      "from": "arch:arch_router:api_public:sm006",
+      "to": "arch:arch_controller:api_reviews:sm008",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:public_router_to_search",
+      "from": "arch:arch_router:api_public:sm006",
+      "to": "arch:arch_controller:api_search:sm008",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:public_router_to_contacts",
+      "from": "arch:arch_router:api_public:sm006",
+      "to": "arch:arch_controller:api_contacts:sm008",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:public_router_to_profile",
+      "from": "arch:arch_router:api_public:sm006",
+      "to": "arch:arch_controller:api_user_profile:sm008",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:public_router_to_addresses",
+      "from": "arch:arch_router:api_public:sm006",
+      "to": "arch:arch_controller:api_user_addresses:sm008",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:auth_router_to_nextauth",
+      "from": "arch:arch_router:api_auth:sm006",
+      "to": "arch:arch_controller:api_auth_nextauth:sm009",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:auth_router_to_register",
+      "from": "arch:arch_router:api_auth:sm006",
+      "to": "arch:arch_controller:api_auth_register:sm009",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:nextauth_to_middleware",
+      "from": "arch:arch_controller:api_auth_nextauth:sm009",
+      "to": "arch:arch_middleware:auth_middleware:sm010",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:api_layer_to_service",
+      "from": "arch:arch_layer:api:sm001",
+      "to": "arch:arch_layer:service:sm001",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:presentation_to_service",
+      "from": "arch:arch_layer:presentation:sm001",
+      "to": "arch:arch_layer:service:sm001",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:service_to_auth",
+      "from": "arch:arch_layer:service:sm001",
+      "to": "arch:arch_service:auth_service:sm011",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:service_to_products",
+      "from": "arch:arch_layer:service:sm001",
+      "to": "arch:arch_service:product_service:sm011",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:service_to_imagekit",
+      "from": "arch:arch_layer:service:sm001",
+      "to": "arch:arch_service:imagekit_service:sm011",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:service_to_utils",
+      "from": "arch:arch_layer:service:sm001",
+      "to": "arch:arch_service:utils_service:sm011",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:service_to_cart_ctx",
+      "from": "arch:arch_layer:service:sm001",
+      "to": "arch:arch_service:cart_context:sm011",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:service_to_auth_provider",
+      "from": "arch:arch_layer:service:sm001",
+      "to": "arch:arch_handler:auth_provider:sm011",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:auth_to_prisma",
+      "from": "arch:arch_service:auth_service:sm011",
+      "to": "arch:arch_repository:prisma_client:sm012",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:product_svc_to_prisma",
+      "from": "arch:arch_service:product_service:sm011",
+      "to": "arch:arch_repository:prisma_client:sm012",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:imagekit_svc_to_cdn",
+      "from": "arch:arch_service:imagekit_service:sm011",
+      "to": "arch:arch_service:imagekit_cdn:sm017",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:cart_ctx_to_api",
+      "from": "arch:arch_service:cart_context:sm011",
+      "to": "arch:arch_controller:api_cart:sm008",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:auth_provider_to_auth",
+      "from": "arch:arch_handler:auth_provider:sm011",
+      "to": "arch:arch_service:auth_service:sm011",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_api_products_to_prisma",
+      "from": "arch:arch_controller:api_admin_products:sm007",
+      "to": "arch:arch_repository:prisma_client:sm012",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_api_categories_to_prisma",
+      "from": "arch:arch_controller:api_admin_categories:sm007",
+      "to": "arch:arch_repository:prisma_client:sm012",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_api_orders_to_prisma",
+      "from": "arch:arch_controller:api_admin_orders:sm007",
+      "to": "arch:arch_repository:prisma_client:sm012",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_api_users_to_prisma",
+      "from": "arch:arch_controller:api_admin_users:sm007",
+      "to": "arch:arch_repository:prisma_client:sm012",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_api_reviews_to_prisma",
+      "from": "arch:arch_controller:api_admin_reviews:sm007",
+      "to": "arch:arch_repository:prisma_client:sm012",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_api_messages_to_prisma",
+      "from": "arch:arch_controller:api_admin_messages:sm007",
+      "to": "arch:arch_repository:prisma_client:sm012",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_api_requests_to_prisma",
+      "from": "arch:arch_controller:api_admin_requests:sm007",
+      "to": "arch:arch_repository:prisma_client:sm012",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_api_analytics_to_prisma",
+      "from": "arch:arch_controller:api_admin_analytics:sm007",
+      "to": "arch:arch_repository:prisma_client:sm012",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_api_upload_to_imagekit",
+      "from": "arch:arch_controller:api_admin_upload:sm007",
+      "to": "arch:arch_service:imagekit_service:sm011",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_api_sync_to_imagekit",
+      "from": "arch:arch_controller:api_admin_sync_images:sm007",
+      "to": "arch:arch_service:imagekit_service:sm011",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:api_cart_to_prisma",
+      "from": "arch:arch_controller:api_cart:sm008",
+      "to": "arch:arch_repository:prisma_client:sm012",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:api_favorites_to_prisma",
+      "from": "arch:arch_controller:api_favorites:sm008",
+      "to": "arch:arch_repository:prisma_client:sm012",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:api_orders_to_prisma",
+      "from": "arch:arch_controller:api_orders:sm008",
+      "to": "arch:arch_repository:prisma_client:sm012",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:api_reviews_to_prisma",
+      "from": "arch:arch_controller:api_reviews:sm008",
+      "to": "arch:arch_repository:prisma_client:sm012",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:api_search_to_prisma",
+      "from": "arch:arch_controller:api_search:sm008",
+      "to": "arch:arch_repository:prisma_client:sm012",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:api_contacts_to_prisma",
+      "from": "arch:arch_controller:api_contacts:sm008",
+      "to": "arch:arch_repository:prisma_client:sm012",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:api_profile_to_prisma",
+      "from": "arch:arch_controller:api_user_profile:sm008",
+      "to": "arch:arch_repository:prisma_client:sm012",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:api_addresses_to_prisma",
+      "from": "arch:arch_controller:api_user_addresses:sm008",
+      "to": "arch:arch_repository:prisma_client:sm012",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:api_register_to_prisma",
+      "from": "arch:arch_controller:api_auth_register:sm009",
+      "to": "arch:arch_repository:prisma_client:sm012",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:service_to_data",
+      "from": "arch:arch_layer:service:sm001",
+      "to": "arch:arch_layer:data:sm001",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:data_to_prisma",
+      "from": "arch:arch_layer:data:sm001",
+      "to": "arch:arch_repository:prisma_client:sm012",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:prisma_to_user",
+      "from": "arch:arch_repository:prisma_client:sm012",
+      "to": "arch:arch_model:user:sm013",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:prisma_to_product",
+      "from": "arch:arch_repository:prisma_client:sm012",
+      "to": "arch:arch_model:product:sm013",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:prisma_to_category",
+      "from": "arch:arch_repository:prisma_client:sm012",
+      "to": "arch:arch_model:category:sm013",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:prisma_to_order",
+      "from": "arch:arch_repository:prisma_client:sm012",
+      "to": "arch:arch_model:order:sm013",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:prisma_to_order_item",
+      "from": "arch:arch_repository:prisma_client:sm012",
+      "to": "arch:arch_model:order_item:sm013",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:prisma_to_cart_item",
+      "from": "arch:arch_repository:prisma_client:sm012",
+      "to": "arch:arch_model:cart_item:sm013",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:prisma_to_address",
+      "from": "arch:arch_repository:prisma_client:sm012",
+      "to": "arch:arch_model:address:sm013",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:prisma_to_favorite",
+      "from": "arch:arch_repository:prisma_client:sm012",
+      "to": "arch:arch_model:favorite:sm013",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:prisma_to_review",
+      "from": "arch:arch_repository:prisma_client:sm012",
+      "to": "arch:arch_model:review:sm013",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:prisma_to_review_log",
+      "from": "arch:arch_repository:prisma_client:sm012",
+      "to": "arch:arch_model:review_action_log:sm013",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:prisma_to_manager_req",
+      "from": "arch:arch_repository:prisma_client:sm012",
+      "to": "arch:arch_model:manager_request:sm013",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:prisma_to_status_history",
+      "from": "arch:arch_repository:prisma_client:sm012",
+      "to": "arch:arch_model:order_status_history:sm013",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:prisma_to_contact_msg",
+      "from": "arch:arch_repository:prisma_client:sm012",
+      "to": "arch:arch_model:contact_message:sm013",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:prisma_to_analytics_reset",
+      "from": "arch:arch_repository:prisma_client:sm012",
+      "to": "arch:arch_model:analytics_reset:sm013",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:prisma_to_adapter",
+      "from": "arch:arch_repository:prisma_client:sm012",
+      "to": "arch:arch_eloquent:prisma_adapter_pg:sm014",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:adapter_to_db",
+      "from": "arch:arch_eloquent:prisma_adapter_pg:sm014",
+      "to": "arch:arch_database:postgresql:sm015",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:data_to_infra",
+      "from": "arch:arch_layer:data:sm001",
+      "to": "arch:arch_layer:infra:sm001",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:infra_to_db",
+      "from": "arch:arch_layer:infra:sm001",
+      "to": "arch:arch_database:postgresql:sm015",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:infra_to_migrations",
+      "from": "arch:arch_layer:infra:sm001",
+      "to": "arch:arch_migration:prisma_migrations:sm016",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:infra_to_seed",
+      "from": "arch:arch_layer:infra:sm001",
+      "to": "arch:arch_seeder:prisma_seed:sm016",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:infra_to_imagekit_cdn",
+      "from": "arch:arch_layer:infra:sm001",
+      "to": "arch:arch_service:imagekit_cdn:sm017",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:migrations_to_db",
+      "from": "arch:arch_migration:prisma_migrations:sm016",
+      "to": "arch:arch_database:postgresql:sm015",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:seed_to_db",
+      "from": "arch:arch_seeder:prisma_seed:sm016",
+      "to": "arch:arch_database:postgresql:sm015",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:middleware_to_auth",
+      "from": "arch:arch_middleware:auth_middleware:sm010",
+      "to": "arch:arch_service:auth_service:sm011",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:homepage_to_product_svc",
+      "from": "arch:arch_controller:homepage:sm003",
+      "to": "arch:arch_service:product_service:sm011",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:catalog_to_product_svc",
+      "from": "arch:arch_controller:catalog_page:sm003",
+      "to": "arch:arch_service:product_service:sm011",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:product_to_product_svc",
+      "from": "arch:arch_controller:product_page:sm003",
+      "to": "arch:arch_service:product_service:sm011",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:cart_page_to_cart_ctx",
+      "from": "arch:arch_controller:cart_page:sm003",
+      "to": "arch:arch_service:cart_context:sm011",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:checkout_to_cart_ctx",
+      "from": "arch:arch_controller:checkout_page:sm003",
+      "to": "arch:arch_service:cart_context:sm011",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:header_to_search_api",
+      "from": "arch:arch_entry_interface:global_search:sm005",
+      "to": "arch:arch_controller:api_search:sm008",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:header_to_cart_ctx",
+      "from": "arch:arch_entry_interface:header:sm005",
+      "to": "arch:arch_service:cart_context:sm011",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_products_to_upload_api",
+      "from": "arch:arch_controller:admin_products:sm004",
+      "to": "arch:arch_controller:api_admin_upload:sm007",
+      "type": "arch_dependency"
+    },
+    {
+      "id": "edge:admin_analytics_to_analytics_api",
+      "from": "arch:arch_controller:admin_analytics:sm004",
+      "to": "arch:arch_controller:api_admin_analytics:sm007",
+      "type": "arch_dependency"
+    }
+  ]
+}
