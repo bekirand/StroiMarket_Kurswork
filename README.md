@@ -42,6 +42,9 @@ ERP/B2B/B2C веб-приложение для автоматизации роз
 *   **Стилизация:** CSS Modules (изоляция стилей компонентов, чистый CSS без лишних библиотек)
 *   **Аналитика:** Recharts (визуализация графиков продаж и оборотов в панели администратора)
 
+### Архитектура приложения и стек технологий
+![Архитектурный стек «СтройМаркет»](./public/images/architecture.png)
+
 ---
 
 ## 📐 Инженерные решения и архитектурные компромиссы
@@ -66,90 +69,13 @@ ERP/B2B/B2C веб-приложение для автоматизации роз
 
 ## 🗄 Структура базы данных (ER-диаграмма)
 
-Ниже представлена схема связей реляционной базы данных (PostgreSQL / Prisma):
-
-```mermaid
-erDiagram
-    users ||--o{ orders : "places"
-    users ||--o{ cart_items : "has"
-    users ||--o{ addresses : "saves"
-    users ||--o{ favorites : "adds"
-    users ||--o{ reviews : "writes"
-    users ||--o{ review_action_logs : "moderates"
-    users ||--o{ manager_requests : "sends/receives"
-    users ||--o{ order_status_history : "changes status"
-    
-    categories ||--o{ products : "contains"
-    
-    products ||--o{ order_items : "included in"
-    products ||--o{ cart_items : "added to"
-    products ||--o{ favorites : "favorited"
-    products ||--o{ reviews : "has reviews"
-    
-    orders ||--|{ order_items : "contains"
-    orders ||--o{ order_status_history : "tracks status changes"
-    
-    reviews ||--o{ review_action_logs : "logged actions"
-```
+![ER-диаграмма базы данных «СтройМаркет»](./public/images/er-diagram-db.jpeg)
 
 ---
 
 ## 🔄 Жизненный цикл заказа (BPMN TO-BE)
 
-Процесс обработки заказа разделен на зоны ответственности в рамках единой кодовой базы:
-
-```mermaid
-flowchart TD
-    %% ДОРОЖКА: ПОКУПАТЕЛЬ
-    subgraph Customer [Покупатель]
-        Start((Начало)) --> A[Выбрать товары в каталоге]
-        A --> B[Оформить заказ: адрес или самовывоз]
-    end
-
-    %% ДОРОЖКА: СИСТЕМА
-    subgraph System [Система и БД]
-        B --> C[Создать заказ со статусом NOVIY и зарезервировать остатки]
-        C --> D[Записать OrderStatusHistory]
-    end
-
-    %% ДОРОЖКА: МЕНЕДЖЕР
-    subgraph Manager [Менеджер]
-        D --> E{Верификация заказа}
-        E -->|Данные неверны / Спам| F[Перевести в OTMENEN]
-        E -->|Всё корректно| G[Перевести в PODTVERZHDEN]
-    end
-
-    %% Действия Системы
-    F --> F_Sys[Возврат остатков на склад]
-    F_Sys --> End1((Конец: Отмена))
-    
-    G --> G_Sys[Ожидание сборки]
-    G_Sys --> H_Sys[Перевод в V_OBRABOTKE]
-
-    %% ДОРОЖКА: СКЛАД
-    subgraph Storekeeper [Кладовщик]
-        H_Sys --> I[Физическая сборка товаров на складе]
-        I --> J[Передача курьеру или на пункт выдачи]
-    end
-
-    %% Завершение Системой и Складом
-    J --> K_Sys[Смена статуса на OTPRAVLEN]
-    K_Sys --> L[Доставка и вручение клиенту]
-    L --> M_Sys[Смена статуса на DOSTAVLEN]
-    M_Sys --> End2((Конец: Успех))
-
-    %% Стили блоков
-    classDef startEvent fill:#d4edda,stroke:#28a745,stroke-width:2px;
-    classDef endEvent fill:#f8d7da,stroke:#dc3545,stroke-width:4px;
-    classDef sysAction fill:#e2e3e5,stroke:#6c757d;
-    classDef gateway fill:#fff3cd,stroke:#ffc107;
-
-    %% Применение стилей
-    class Start startEvent
-    class End1,End2 endEvent
-    class C,D,F_Sys,G_Sys,H_Sys,K_Sys,M_Sys sysAction
-    class E gateway
-```
+![BPMN-процесс оформления заказа](./public/images/bpmn-process.png)
 
 ---
 
