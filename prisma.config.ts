@@ -11,6 +11,7 @@ export default defineConfig({
     seed: "tsx ./prisma/seed.ts",
   },
   datasource: {
-    url: process.env["DATABASE_URL"],
+    // DIRECT_URL (порт 5432, без pgbouncer) нужен для CLI-команд (migrate, db push)
+    url: process.env["DIRECT_URL"] ?? process.env["DATABASE_URL"],
   },
 });

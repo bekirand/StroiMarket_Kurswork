@@ -81,7 +81,6 @@ export async function POST(req: Request) {
 
         const orderId = generateShortId();
 
-        // Транзакция: создаем заказ и списываем остатки
         const [order] = await prisma.$transaction([
             prisma.order.create({
                 data: {

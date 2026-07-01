@@ -19,8 +19,10 @@ const globalForPrisma = globalThis as unknown as {
  * Создаёт новый экземпляр PrismaClient с адаптером PostgreSQL
  */
 function createPrismaClient(): PrismaClient {
-    // @prisma/adapter-pg v7 требует экземпляр pg.Pool, а не объект { connectionString }
-    const pool = new Pool({ connectionString: process.env.DATABASE_URL! });
+    // Используем DIRECT_URL (порт 5432), так как pg.Pool конфликтует с PgBouncer (порт 6543)
+    // в транзакционном режиме (Connection terminated unexpectedly из-за prepared statements)
+    const connectionString = process.env.DIRECT_URL || process.env.DATABASE_URL!;
+    const pool = new Pool({ connectionString });
     const adapter = new PrismaPg(pool);
     return new PrismaClient({
         adapter,

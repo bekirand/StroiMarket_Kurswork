@@ -8,7 +8,6 @@ export async function POST(req: Request) {
         const body = await req.json();
         const { name, email, password } = body;
 
-        // Базовая валидация
         if (!name?.trim() || !email?.trim() || !password?.trim()) {
             return NextResponse.json({ error: 'Заполните все поля' }, { status: 400 });
         }
@@ -17,7 +16,6 @@ export async function POST(req: Request) {
             return NextResponse.json({ error: 'Пароль должен быть не менее 6 символов' }, { status: 400 });
         }
 
-        // Проверка, существует ли пользователь
         const userExists = await prisma.user.findUnique({
             where: { email }
         });
@@ -26,11 +24,9 @@ export async function POST(req: Request) {
             return NextResponse.json({ error: 'Пользователь с таким email уже существует' }, { status: 409 });
         }
 
-        // Хешируем пароль
         const salt = await bcrypt.genSalt(10);
         const passwordHash = await bcrypt.hash(password, salt);
 
-        // Создаем пользователя в БД
         const user = await prisma.user.create({
             data: {
                 name: name.trim(),

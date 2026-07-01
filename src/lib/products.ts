@@ -12,9 +12,7 @@ export interface ProductFilters {
 
 // ── Запросы ─────────────────────────────────────────────
 
-/** Список товаров с фильтрами */
 export async function getProducts(filters: ProductFilters = {}) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const where: Record<string, any> = { isActive: true };
 
     if (filters.search) {

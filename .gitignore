@@ -46,3 +46,12 @@ next-env.d.ts
 # Davia
 .davia/
 .agent\workflows\davia-documentation.md
+
+# BPMN diagrams and documentation
+BPMN_Order_Process.drawio
+BPMN_Order_Process.html
+BPMN_REPORT.md
+
+# ArcForge architecture
+.arcforge-architecture
+architecture.json

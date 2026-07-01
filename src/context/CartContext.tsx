@@ -35,24 +35,20 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     const [items, setItems] = useState<CartItem[]>([]);
     const [hydrated, setHydrated] = useState(false);
 
-    // Загружаем корзину из localStorage при первом рендере
     useEffect(() => {
         try {
             const raw = localStorage.getItem(STORAGE_KEY);
             if (raw) setItems(JSON.parse(raw));
         } catch {
-            // ignore
         }
         setHydrated(true);
     }, []);
 
-    // Сохраняем в localStorage при каждом изменении
     useEffect(() => {
         if (!hydrated) return;
         localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
     }, [items, hydrated]);
 
-    // ── Методы ──
     const addItem = useCallback((newItem: Omit<CartItem, 'quantity'>, qty = 1) => {
         setItems(prev => {
             const existing = prev.find(i => i.productId === newItem.productId);
