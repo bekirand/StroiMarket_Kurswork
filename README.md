@@ -100,37 +100,31 @@ erDiagram
 
 ```mermaid
 flowchart TD
-    %% Стили блоков
-    classDef startEvent fill:#d4edda,stroke:#28a745,stroke-width:2px,shape:circle;
-    classDef endEvent fill:#f8d7da,stroke:#dc3545,stroke-width:4px,shape:circle;
-    classDef sysAction fill:#e2e3e5,stroke:#6c757d;
-    classDef gateway fill:#fff3cd,stroke:#ffc107,shape:diamond;
-
     %% ДОРОЖКА: ПОКУПАТЕЛЬ
     subgraph Customer [Покупатель]
-        Start(((Начало))) ::: startEvent --> A[Выбрать товары в каталоге]
+        Start((Начало)) --> A[Выбрать товары в каталоге]
         A --> B[Оформить заказ: адрес или самовывоз]
     end
 
     %% ДОРОЖКА: СИСТЕМА
     subgraph System [Система и БД]
-        B --> C[Создать заказ со статусом NOVIY и зарезервировать остатки] ::: sysAction
-        C --> D[Записать OrderStatusHistory] ::: sysAction
+        B --> C[Создать заказ со статусом NOVIY и зарезервировать остатки]
+        C --> D[Записать OrderStatusHistory]
     end
 
     %% ДОРОЖКА: МЕНЕДЖЕР
     subgraph Manager [Менеджер]
-        D --> E{Верификация заказа} ::: gateway
+        D --> E{Верификация заказа}
         E -->|Данные неверны / Спам| F[Перевести в OTMENEN]
         E -->|Всё корректно| G[Перевести в PODTVERZHDEN]
     end
 
     %% Действия Системы
-    F --> F_Sys[Возврат остатков на склад] ::: sysAction
-    F_Sys --> End1(((Конец: Отмена))) ::: endEvent
+    F --> F_Sys[Возврат остатков на склад]
+    F_Sys --> End1((Конец: Отмена))
     
-    G --> G_Sys[Ожидание сборки] ::: sysAction
-    G_Sys --> H_Sys[Перевод в V_OBRABOTKE] ::: sysAction
+    G --> G_Sys[Ожидание сборки]
+    G_Sys --> H_Sys[Перевод в V_OBRABOTKE]
 
     %% ДОРОЖКА: СКЛАД
     subgraph Storekeeper [Кладовщик]
@@ -139,10 +133,22 @@ flowchart TD
     end
 
     %% Завершение Системой и Складом
-    J --> K_Sys[Смена статуса на OTPRAVLEN] ::: sysAction
+    J --> K_Sys[Смена статуса на OTPRAVLEN]
     K_Sys --> L[Доставка и вручение клиенту]
-    L --> M_Sys[Смена статуса на DOSTAVLEN] ::: sysAction
-    M_Sys --> End2(((Конец: Успех))) ::: endEvent
+    L --> M_Sys[Смена статуса на DOSTAVLEN]
+    M_Sys --> End2((Конец: Успех))
+
+    %% Стили блоков
+    classDef startEvent fill:#d4edda,stroke:#28a745,stroke-width:2px;
+    classDef endEvent fill:#f8d7da,stroke:#dc3545,stroke-width:4px;
+    classDef sysAction fill:#e2e3e5,stroke:#6c757d;
+    classDef gateway fill:#fff3cd,stroke:#ffc107;
+
+    %% Применение стилей
+    class Start startEvent
+    class End1,End2 endEvent
+    class C,D,F_Sys,G_Sys,H_Sys,K_Sys,M_Sys sysAction
+    class E gateway
 ```
 
 ---
